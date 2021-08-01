@@ -24,17 +24,23 @@ export async function downloadDataIfNecessary() {
     const outputRawFilePath = RAW_DATA_DIR + zipFileName;
     const outputExpandedPath = EXPANDED_DATA_DIR + noExtenstionName;
 
+    let doneAnything = false;
+
     if (!fs.existsSync(outputRawFilePath)) {
+      doneAnything = true;
       printProgress("💾 Downloading");
       await download(url, RAW_DATA_DIR);
     }
 
     if (!fs.existsSync(outputExpandedPath)) {
+      doneAnything = true;
       printProgress("📁 Starting decompression");
       decompress(outputRawFilePath, outputExpandedPath);
     }
 
-    printProgress("✔ Done");
+    if (doneAnything) {
+      printProgress("✔ Done");
+    }
   };
 
   await Promise.all(
