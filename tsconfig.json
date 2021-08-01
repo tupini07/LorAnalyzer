@@ -2,6 +2,7 @@
     "extends": "@tsconfig/node16/tsconfig.json",
     "compilerOptions": {
         "resolveJsonModule": true,
+        "strict": true,
         "outDir": "./dist",
         "typeRoots": [
             "node_modules/@types"

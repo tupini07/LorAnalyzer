@@ -3,9 +3,11 @@ import { Command } from "commander";
 import * as actions from "./actions";
 import { getAllKnownKeywordsNames } from "./data";
 
+import packageInfo from "../package.json";
+
 export function runCli() {
   const program = new Command();
-  program.version("1.0.0").name("loranalyzer");
+  program.version(packageInfo.version).name(packageInfo.name);
 
   program
     .command("cards-with-keyword")
