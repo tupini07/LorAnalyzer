@@ -1,0 +1,26 @@
+{
+  "name": "loranalyzer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc --project .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.1.0",
+    "decompress": "^4.2.1",
+    "download": "^8.0.0",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.2",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/download": "^8.0.1"
+  }
+}
