@@ -1,6 +1,8 @@
-import { runCli } from "./cli";
 import { downloadDataIfNecessary } from "./downloader";
 
 downloadDataIfNecessary().then(() => {
-    runCli();
+  // we first need to check and download data before actually executing
+  // application logic
+  const runCli = require("./cli");
+  runCli();
 });
