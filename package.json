@@ -6,6 +6,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "tsc --project .",
+    "rollup": "rollup --config rollup.config.js",
+    "build:pkg": "rm -rf dist && npm run build && npm run rollup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrea Tupini <tupini07@gmail.com>",
@@ -22,8 +24,11 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@tsconfig/node16": "^1.0.2",
     "@tsconfig/recommended": "^1.0.1",
-    "@types/download": "^8.0.1"
+    "@types/download": "^8.0.1",
+    "rollup": "^2.55.1"
   }
 }
